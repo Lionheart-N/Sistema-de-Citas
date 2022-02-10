@@ -30,7 +30,7 @@ public class usuarioMundo {
         }
     
     }
-    
+    //++++
     public ResultSet getUsuario(String usuario){
         try{
             this.strSQL = "SELECT * FROM usuario WHERE usuario = '" + usuario +"'";
