@@ -4,7 +4,7 @@ import java.sql.*;
 import java.sql.SQLException;
 
 
-
+// Cambio de prueba para GABO
 public class ServiceLocator {
  
     String url = "jdbc:postgresql://localhost:5432/Citas";;
