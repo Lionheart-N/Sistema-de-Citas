@@ -5,6 +5,7 @@
  */
 package com.appCitas.vistas;
 
+import Desvanecimiento.Desvanecimiento;
 import java.awt.Color;
 
 /**
@@ -14,12 +15,15 @@ import java.awt.Color;
 public class Menu extends javax.swing.JFrame {
 
     private int xMouse, yMouse;
+    private Desvanecimiento efecto;
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
         this.setLocationRelativeTo(this);
+        efecto=new Desvanecimiento();
+        efecto.Abrir(this, 25);
     }
 
     /**
@@ -246,7 +250,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void lbl_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        efecto.Cerrar(this, 25);
     }//GEN-LAST:event_lbl_cerrarMouseClicked
 
     private void lbl_cerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseExited

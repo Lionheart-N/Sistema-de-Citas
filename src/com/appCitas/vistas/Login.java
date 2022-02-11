@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import Desvanecimiento.Desvanecimiento;
 
 /**
  *
@@ -27,6 +28,7 @@ public class Login extends javax.swing.JFrame {
     private Aceptado acepVista = null;
     private Rechazado rechazadoVista = null;
     private Menu menu;
+    private Desvanecimiento efecto;
     
     /**
      * Creates new form Login
@@ -35,6 +37,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
         conUser = new controladoresUsuario();
+        efecto=new Desvanecimiento();
+        efecto.Abrir(this, 25);
     }
 
     /**
@@ -234,7 +238,7 @@ public class Login extends javax.swing.JFrame {
 
     private void lbl_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        efecto.Cerrar(this, 25);
     }//GEN-LAST:event_lbl_cerrarMouseClicked
 
     private void panel_barraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_barraMouseDragged
