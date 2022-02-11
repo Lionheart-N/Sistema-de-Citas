@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ServiceLocator {
  
     String url = "jdbc:postgresql://localhost/Citas";;
-    String usuario = "postgres";
+    String usuario = "postgressss";
     String pass = "root";
     String driver = "org.postgresql.Driver";
     Connection conn = null;
