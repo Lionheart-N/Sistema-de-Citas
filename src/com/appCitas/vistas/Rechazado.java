@@ -9,12 +9,13 @@ package com.appCitas.vistas;
 import com.sun.awt.AWTUtilities;
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.JDialog;
 
 /**
  *
  * @author Gabriel Dubuc
  */
-public class Rechazado extends javax.swing.JFrame {
+public class Rechazado extends JDialog {
 
     private int xMouse, yMouse;
     /**
@@ -26,6 +27,14 @@ public class Rechazado extends javax.swing.JFrame {
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         AWTUtilities.setWindowShape(this, forma);  
     }
+    
+    public Rechazado(Login login) {
+        super(login, true);
+        initComponents();
+        this.setLocationRelativeTo(this);
+        Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
+        AWTUtilities.setWindowShape(this, forma);  
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,7 +63,7 @@ public class Rechazado extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
@@ -108,8 +117,6 @@ public class Rechazado extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jLabel4.getAccessibleContext().setAccessibleName("");
-
         backgroud_rechazado.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 239, 300, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,7 +147,7 @@ public class Rechazado extends javax.swing.JFrame {
     }//GEN-LAST:event_backgroud_rechazadoMouseDragged
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**

@@ -15,18 +15,29 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import com.appCitas.controladores.controladoresMenu;
+import javax.swing.JDialog;
 
 /**
  *
  * @author Gabriel Dubuc
  */
-public class Aceptado extends javax.swing.JFrame {
+public class Aceptado extends JDialog {
 
     private int xMouse, yMouse;
     /**
      * Creates new form Aceptar
      */
     public Aceptado() {
+        initComponents();
+        this.setLocationRelativeTo(this);
+        Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
+        AWTUtilities.setWindowShape(this, forma);
+      
+        
+    }
+    
+    public Aceptado(Login login) {
+        super(login, true);
         initComponents();
         this.setLocationRelativeTo(this);
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
@@ -50,7 +61,7 @@ public class Aceptado extends javax.swing.JFrame {
         margenes_boton = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 

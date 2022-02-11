@@ -297,12 +297,12 @@ public class Login extends javax.swing.JFrame {
         if(!txt_usuario.getText().isEmpty() && ! new String(pass_contraseña.getPassword()).isEmpty()){      
             lbl_notificacion.setForeground(Color.white); 
             if(conUser.checkLogin(txt_usuario.getText(), new String(pass_contraseña.getPassword()))){
-                acepVista = new Aceptado();
+                acepVista = new Aceptado(Login.this);
                 acepVista.setVisible(true);
                 this.dispose();
                 
             }else{
-                rechazadoVista = new Rechazado();
+                rechazadoVista = new Rechazado(Login.this);
                 rechazadoVista.setVisible(true);
             }
             

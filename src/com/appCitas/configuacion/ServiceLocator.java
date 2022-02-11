@@ -7,9 +7,9 @@ import java.sql.SQLException;
 // Cambio de prueba para GABO
 public class ServiceLocator {
  
-    String url = "jdbc:postgresql://localhost:5432/Citas";;
+    String url = "jdbc:postgresql://localhost/Citas";;
     String usuario = "postgres";
-    String pass = "14074871G";
+    String pass = "root";
     String driver = "org.postgresql.Driver";
     Connection conn = null;
 
