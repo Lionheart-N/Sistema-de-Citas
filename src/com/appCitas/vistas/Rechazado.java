@@ -6,6 +6,7 @@
 package com.appCitas.vistas;
 
 
+import Desvanecido.Efecto;
 import com.sun.awt.AWTUtilities;
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
@@ -18,6 +19,7 @@ import javax.swing.JDialog;
 public class Rechazado extends JDialog {
 
     private int xMouse, yMouse;
+    private Efecto fade;
     /**
      * Creates new form Rechazado
      */
@@ -25,7 +27,9 @@ public class Rechazado extends JDialog {
         initComponents();
         this.setLocationRelativeTo(this);
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
-        AWTUtilities.setWindowShape(this, forma);  
+        AWTUtilities.setWindowShape(this, forma); 
+        fade=new Efecto(this);
+        eventos();
     }
     
     public Rechazado(Login login) {
@@ -34,6 +38,8 @@ public class Rechazado extends JDialog {
         this.setLocationRelativeTo(this);
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         AWTUtilities.setWindowShape(this, forma);  
+        fade=new Efecto(this);
+        eventos();
     }    
 
     /**
@@ -147,9 +153,19 @@ public class Rechazado extends JDialog {
     }//GEN-LAST:event_backgroud_rechazadoMouseDragged
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        fade.cerrar(100);
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void eventos(){
+        addWindowListener(new java.awt.event.WindowAdapter() {        
+            @Override
+            public void windowActivated(java.awt.event.WindowEvent evt){
+                fade.abrir(100);
+            }      
+        });
+    }    
+    
     /**
      * @param args the command line arguments
      */
