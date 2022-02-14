@@ -28,7 +28,10 @@ public class controladoresMenu {
     }
     
     public void index(String idUsuario){
-        new com.appCitas.vistas.Menu(idUsuario).setVisible(true);
+        Menu menu=new com.appCitas.vistas.Menu();
+        menu.setIdUsuario(idUsuario);
+        menu.setVisible(true);
+        
     }
     
     public String nombreUsuario(String idUsuario){

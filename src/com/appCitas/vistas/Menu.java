@@ -29,11 +29,9 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu(String idUsuario) {
-        this.idUsuario=idUsuario;
+    public Menu() {
         conMenu=new controladoresMenu();
         initComponents();
-        datosUsuario();
         this.setLocationRelativeTo(this);
 
         efecto=new Desvanecimiento();
@@ -93,6 +91,11 @@ public class Menu extends javax.swing.JFrame {
         btn_home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_homeMouseClicked(evt);
+            }
+        });
+        btn_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_homeActionPerformed(evt);
             }
         });
 
@@ -273,6 +276,10 @@ public class Menu extends javax.swing.JFrame {
         lbl_cerrar.setForeground(Color.black);
     }//GEN-LAST:event_lbl_cerrarMouseExited
 
+    private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_homeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,7 +310,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu(null).setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
@@ -312,6 +319,11 @@ public class Menu extends javax.swing.JFrame {
        
         jLabel1.setText(conMenu.nombreUsuario(idUsuario));
         lblfoto.setIcon(conMenu.getImagen(idUsuario));
+    }
+    
+    public void setIdUsuario(String idUsuario){
+        this.idUsuario=idUsuario;
+        datosUsuario();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
