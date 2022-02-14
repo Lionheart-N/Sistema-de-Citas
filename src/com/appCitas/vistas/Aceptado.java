@@ -160,7 +160,6 @@ public class Aceptado extends JDialog {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        new controladoresMenu().index();
         fade.cerrar(100);
         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked

@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import Desvanecimiento.Desvanecimiento;
+import com.appCitas.controladores.controladoresMenu;
 
 /**
  *
@@ -303,6 +304,7 @@ public class Login extends javax.swing.JFrame {
             if(conUser.checkLogin(txt_usuario.getText(), new String(pass_contraseña.getPassword()))){
                 acepVista = new Aceptado(Login.this);
                 acepVista.setVisible(true);
+                new controladoresMenu().index(conUser.getId());
                 this.dispose();
                 
             }else{

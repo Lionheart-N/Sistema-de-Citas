@@ -6,22 +6,36 @@
 package com.appCitas.vistas;
 
 import Desvanecimiento.Desvanecimiento;
+import com.appCitas.controladores.controladoresMenu;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.InputStream;
+import java.sql.ResultSet;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Gabriel Dubuc
  */
 public class Menu extends javax.swing.JFrame {
-
+    
+    private controladoresMenu conMenu;
     private int xMouse, yMouse;
     private Desvanecimiento efecto;
+    private String idUsuario;
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(String idUsuario) {
+        this.idUsuario=idUsuario;
+        conMenu=new controladoresMenu();
         initComponents();
+        datosUsuario();
         this.setLocationRelativeTo(this);
+
         efecto=new Desvanecimiento();
         efecto.Abrir(this, 25);
     }
@@ -42,8 +56,8 @@ public class Menu extends javax.swing.JFrame {
         btn_usuarios = new rojerusan.RSButtonIconI();
         btn_clientes = new rojerusan.RSButtonIconI();
         btn_acerca = new rojerusan.RSButtonIconI();
-        rSFotoCircle1 = new rojerusan.RSFotoCircle();
         jLabel1 = new javax.swing.JLabel();
+        lblfoto = new javax.swing.JLabel();
         panel_cart = new javax.swing.JPanel();
         panel_cerrar = new javax.swing.JPanel();
         lbl_cerrar = new javax.swing.JLabel();
@@ -128,10 +142,6 @@ public class Menu extends javax.swing.JFrame {
         panel_menuLayout.setHorizontalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rSFotoCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,13 +150,17 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btn_clientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_acerca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(panel_menuLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_menuLayout.setVerticalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(rSFotoCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
+                .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,9 +303,15 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(null).setVisible(true);
             }
         });
+    }
+    
+    private void datosUsuario(){ 
+       
+        jLabel1.setText(conMenu.nombreUsuario(idUsuario));
+        lblfoto.setIcon(conMenu.getImagen(idUsuario));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -302,10 +322,10 @@ public class Menu extends javax.swing.JFrame {
     private rojerusan.RSButtonIconI btn_usuarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_cerrar;
+    private javax.swing.JLabel lblfoto;
     private javax.swing.JPanel menu_background;
     private javax.swing.JPanel panel_cart;
     private javax.swing.JPanel panel_cerrar;
     private javax.swing.JPanel panel_menu;
-    private rojerusan.RSFotoCircle rSFotoCircle1;
     // End of variables declaration//GEN-END:variables
 }

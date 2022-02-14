@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 public class controladoresUsuario {
     
     private com.appCitas.mundo.usuarioMundo usuarioMundo;
+    private String idUsuario;
     
     public controladoresUsuario(){
         this.usuarioMundo = new usuarioMundo();
@@ -34,6 +35,7 @@ public class controladoresUsuario {
             
             if(Rs.next()){
                 if(Rs.getString("contraseña").equals(contraseña) && Rs.getString("usuario").equals(usuario)){
+                    idUsuario=Rs.getString("k_id_usuario");                            
                     return true;
                 }
             }
@@ -41,6 +43,10 @@ public class controladoresUsuario {
             Logger.getLogger(controladoresUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+    
+    public String getId(){
+        return idUsuario;
     }
     
 }
