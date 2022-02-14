@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import Desvanecimiento.Desvanecimiento;
 import com.appCitas.controladores.controladoresMenu;
+import java.applet.Applet;
+import java.applet.AudioClip;
 
 /**
  *
@@ -30,15 +32,19 @@ public class Login extends javax.swing.JFrame {
     private Rechazado rechazadoVista = null;
     private Menu menu;
     private Desvanecimiento efecto;
+    private AudioClip player;
     
     /**
      * Creates new form Login
      */
     public Login() {
-        initComponents();
-        this.setLocationRelativeTo(this);
+        player=Applet.newAudioClip(getClass().getResource("/com/appCitas/recursos/intro1.wav"));
         conUser = new controladoresUsuario();
-        efecto=new Desvanecimiento();
+        efecto=new Desvanecimiento();        
+        initComponents();
+        eventos();
+        this.setLocationRelativeTo(this);
+
         efecto.Abrir(this, 25);
     }
 
@@ -354,6 +360,15 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void eventos(){
+        addWindowListener(new java.awt.event.WindowAdapter() {        
+            @Override
+            public void windowOpened(java.awt.event.WindowEvent evt){
+                player.play();
+            }    
+        });
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
