@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import rojerusan.RSPanelsSlider;
 
 /**
  *
@@ -56,9 +57,17 @@ public class Menu extends javax.swing.JFrame {
         btn_acerca = new rojerusan.RSButtonIconI();
         jLabel1 = new javax.swing.JLabel();
         lblfoto = new javax.swing.JLabel();
-        panel_cart = new javax.swing.JPanel();
-        panel_cerrar = new javax.swing.JPanel();
-        lbl_cerrar = new javax.swing.JLabel();
+        panel_cards = new rojerusan.RSPanelsSlider();
+        panel_home = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panel_citas = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        panel_usuarios = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        panel_clientes = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        panel_acerca = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -107,6 +116,11 @@ public class Menu extends javax.swing.JFrame {
         btn_citas.setFocusable(false);
         btn_citas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_citas.setMargin(new java.awt.Insets(2, 14, 2, 12));
+        btn_citas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_citasActionPerformed(evt);
+            }
+        });
 
         btn_usuarios.setBackground(new java.awt.Color(147, 100, 68));
         btn_usuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/Menu_usuarios.png"))); // NOI18N
@@ -116,6 +130,11 @@ public class Menu extends javax.swing.JFrame {
         btn_usuarios.setFocusable(false);
         btn_usuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_usuarios.setMargin(new java.awt.Insets(2, 34, 2, 0));
+        btn_usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_usuariosActionPerformed(evt);
+            }
+        });
 
         btn_clientes.setBackground(new java.awt.Color(147, 100, 68));
         btn_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/Menu_clientes.png"))); // NOI18N
@@ -125,6 +144,11 @@ public class Menu extends javax.swing.JFrame {
         btn_clientes.setFocusable(false);
         btn_clientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_clientes.setMargin(new java.awt.Insets(2, 31, 2, 0));
+        btn_clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clientesActionPerformed(evt);
+            }
+        });
 
         btn_acerca.setBackground(new java.awt.Color(147, 100, 68));
         btn_acerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/Menu_acerca.png"))); // NOI18N
@@ -134,6 +158,11 @@ public class Menu extends javax.swing.JFrame {
         btn_acerca.setFocusable(false);
         btn_acerca.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btn_acerca.setMargin(new java.awt.Insets(2, 41, 2, 0));
+        btn_acerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_acercaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,53 +209,129 @@ public class Menu extends javax.swing.JFrame {
 
         menu_background.add(panel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
 
-        panel_cart.setBackground(new java.awt.Color(255, 255, 255));
+        panel_cards.setBackground(new java.awt.Color(255, 255, 255));
 
-        panel_cerrar.setBackground(new java.awt.Color(255, 255, 255));
+        panel_home.setBackground(new java.awt.Color(255, 255, 255));
+        panel_home.setName("panel_home"); // NOI18N
 
-        lbl_cerrar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        lbl_cerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_cerrar.setText("X");
-        lbl_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbl_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_cerrarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbl_cerrarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbl_cerrarMouseExited(evt);
-            }
-        });
+        jLabel2.setText("jLabel1");
 
-        javax.swing.GroupLayout panel_cerrarLayout = new javax.swing.GroupLayout(panel_cerrar);
-        panel_cerrar.setLayout(panel_cerrarLayout);
-        panel_cerrarLayout.setHorizontalGroup(
-            panel_cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl_cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        javax.swing.GroupLayout panel_homeLayout = new javax.swing.GroupLayout(panel_home);
+        panel_home.setLayout(panel_homeLayout);
+        panel_homeLayout.setHorizontalGroup(
+            panel_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_homeLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel2)
+                .addContainerGap(295, Short.MAX_VALUE))
         );
-        panel_cerrarLayout.setVerticalGroup(
-            panel_cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl_cerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+        panel_homeLayout.setVerticalGroup(
+            panel_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_homeLayout.createSequentialGroup()
+                .addContainerGap(271, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(215, 215, 215))
         );
 
-        javax.swing.GroupLayout panel_cartLayout = new javax.swing.GroupLayout(panel_cart);
-        panel_cart.setLayout(panel_cartLayout);
-        panel_cartLayout.setHorizontalGroup(
-            panel_cartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cartLayout.createSequentialGroup()
-                .addGap(0, 558, Short.MAX_VALUE)
-                .addComponent(panel_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        panel_cards.add(panel_home, "card2");
+
+        panel_citas.setBackground(new java.awt.Color(255, 255, 255));
+        panel_citas.setName("panel_citas"); // NOI18N
+
+        jLabel3.setText("jLabel2");
+
+        javax.swing.GroupLayout panel_citasLayout = new javax.swing.GroupLayout(panel_citas);
+        panel_citas.setLayout(panel_citasLayout);
+        panel_citasLayout.setHorizontalGroup(
+            panel_citasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_citasLayout.createSequentialGroup()
+                .addGap(234, 234, 234)
+                .addComponent(jLabel3)
+                .addContainerGap(332, Short.MAX_VALUE))
         );
-        panel_cartLayout.setVerticalGroup(
-            panel_cartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cartLayout.createSequentialGroup()
-                .addComponent(panel_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 472, Short.MAX_VALUE))
+        panel_citasLayout.setVerticalGroup(
+            panel_citasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_citasLayout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(235, 235, 235))
         );
 
-        menu_background.add(panel_cart, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 600, 500));
+        panel_cards.add(panel_citas, "card3");
+
+        panel_usuarios.setBackground(new java.awt.Color(255, 255, 255));
+        panel_usuarios.setName("panel_usuarios"); // NOI18N
+
+        jLabel4.setText("jLabel3");
+
+        javax.swing.GroupLayout panel_usuariosLayout = new javax.swing.GroupLayout(panel_usuarios);
+        panel_usuarios.setLayout(panel_usuariosLayout);
+        panel_usuariosLayout.setHorizontalGroup(
+            panel_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_usuariosLayout.createSequentialGroup()
+                .addGap(282, 282, 282)
+                .addComponent(jLabel4)
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+        panel_usuariosLayout.setVerticalGroup(
+            panel_usuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_usuariosLayout.createSequentialGroup()
+                .addContainerGap(249, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(237, 237, 237))
+        );
+
+        panel_cards.add(panel_usuarios, "card4");
+
+        panel_clientes.setBackground(new java.awt.Color(255, 255, 255));
+        panel_clientes.setName("panel_clientes"); // NOI18N
+
+        jLabel5.setText("jLabel4");
+
+        javax.swing.GroupLayout panel_clientesLayout = new javax.swing.GroupLayout(panel_clientes);
+        panel_clientes.setLayout(panel_clientesLayout);
+        panel_clientesLayout.setHorizontalGroup(
+            panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_clientesLayout.createSequentialGroup()
+                .addGap(274, 274, 274)
+                .addComponent(jLabel5)
+                .addContainerGap(292, Short.MAX_VALUE))
+        );
+        panel_clientesLayout.setVerticalGroup(
+            panel_clientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_clientesLayout.createSequentialGroup()
+                .addGap(237, 237, 237)
+                .addComponent(jLabel5)
+                .addContainerGap(249, Short.MAX_VALUE))
+        );
+
+        panel_cards.add(panel_clientes, "card5");
+
+        panel_acerca.setBackground(new java.awt.Color(255, 255, 255));
+        panel_acerca.setName("panel_acerca"); // NOI18N
+
+        jLabel6.setText("jLabel5");
+
+        javax.swing.GroupLayout panel_acercaLayout = new javax.swing.GroupLayout(panel_acerca);
+        panel_acerca.setLayout(panel_acercaLayout);
+        panel_acercaLayout.setHorizontalGroup(
+            panel_acercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_acercaLayout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(jLabel6)
+                .addContainerGap(296, Short.MAX_VALUE))
+        );
+        panel_acercaLayout.setVerticalGroup(
+            panel_acercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_acercaLayout.createSequentialGroup()
+                .addContainerGap(266, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(220, 220, 220))
+        );
+
+        panel_cards.add(panel_acerca, "card6");
+
+        menu_background.add(panel_cards, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 600, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -259,26 +364,70 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_homeMouseClicked
 
-    private void lbl_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseEntered
-        // TODO add your handling code here:
-        panel_cerrar.setBackground(Color.red);
-        lbl_cerrar.setForeground(Color.white);
-    }//GEN-LAST:event_lbl_cerrarMouseEntered
-
-    private void lbl_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseClicked
-        // TODO add your handling code here:
-        efecto.Cerrar(this, 25);
-    }//GEN-LAST:event_lbl_cerrarMouseClicked
-
-    private void lbl_cerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_cerrarMouseExited
-        // TODO add your handling code here:
-        panel_cerrar.setBackground(Color.white);
-        lbl_cerrar.setForeground(Color.black);
-    }//GEN-LAST:event_lbl_cerrarMouseExited
-
     private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
         // TODO add your handling code here:
+        if(!this.btn_home.isSelected()){
+            this.btn_home.setSelected(true);
+            this.btn_citas.setSelected(false);
+            this.btn_clientes.setSelected(false);
+            this.btn_usuarios.setSelected(false);
+            this.btn_acerca.setSelected(false);
+            
+            panel_cards.setPanelSlider(20, panel_home, RSPanelsSlider.DIRECT.RIGHT);
+        }
     }//GEN-LAST:event_btn_homeActionPerformed
+
+    private void btn_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_citasActionPerformed
+        // TODO add your handling code here:
+        if(!this.btn_citas.isSelected()){
+            this.btn_home.setSelected(false);
+            this.btn_citas.setSelected(true);
+            this.btn_clientes.setSelected(false);
+            this.btn_usuarios.setSelected(false);
+            this.btn_acerca.setSelected(false);
+            
+            panel_cards.setPanelSlider(20, panel_citas, RSPanelsSlider.DIRECT.RIGHT);
+        }
+    }//GEN-LAST:event_btn_citasActionPerformed
+
+    private void btn_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuariosActionPerformed
+        // TODO add your handling code here:
+        if(!this.btn_usuarios.isSelected()){
+            this.btn_home.setSelected(false);
+            this.btn_citas.setSelected(false);
+            this.btn_clientes.setSelected(false);
+            this.btn_usuarios.setSelected(true);
+            this.btn_acerca.setSelected(false);
+            
+            panel_cards.setPanelSlider(20, panel_usuarios, RSPanelsSlider.DIRECT.RIGHT);
+        }
+    }//GEN-LAST:event_btn_usuariosActionPerformed
+
+    private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
+        // TODO add your handling code here:
+        if(!this.btn_clientes.isSelected()){
+            this.btn_home.setSelected(false);
+            this.btn_citas.setSelected(false);
+            this.btn_clientes.setSelected(true);
+            this.btn_usuarios.setSelected(false);
+            this.btn_acerca.setSelected(false);
+            
+            panel_cards.setPanelSlider(20, panel_clientes, RSPanelsSlider.DIRECT.RIGHT);
+        }
+    }//GEN-LAST:event_btn_clientesActionPerformed
+
+    private void btn_acercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acercaActionPerformed
+        // TODO add your handling code here:
+        if(!this.btn_acerca.isSelected()){
+            this.btn_home.setSelected(false);
+            this.btn_citas.setSelected(false);
+            this.btn_clientes.setSelected(false);
+            this.btn_usuarios.setSelected(false);
+            this.btn_acerca.setSelected(true);
+            
+            panel_cards.setPanelSlider(20, panel_acerca, RSPanelsSlider.DIRECT.RIGHT);
+        }
+    }//GEN-LAST:event_btn_acercaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,11 +482,19 @@ public class Menu extends javax.swing.JFrame {
     private rojerusan.RSButtonIconI btn_home;
     private rojerusan.RSButtonIconI btn_usuarios;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl_cerrar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblfoto;
     private javax.swing.JPanel menu_background;
-    private javax.swing.JPanel panel_cart;
-    private javax.swing.JPanel panel_cerrar;
+    private javax.swing.JPanel panel_acerca;
+    private rojerusan.RSPanelsSlider panel_cards;
+    private javax.swing.JPanel panel_citas;
+    private javax.swing.JPanel panel_clientes;
+    private javax.swing.JPanel panel_home;
     private javax.swing.JPanel panel_menu;
+    private javax.swing.JPanel panel_usuarios;
     // End of variables declaration//GEN-END:variables
 }
