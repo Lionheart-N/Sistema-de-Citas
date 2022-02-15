@@ -57,6 +57,7 @@ public class Menu extends javax.swing.JFrame {
         btn_acerca = new rojerusan.RSButtonIconI();
         jLabel1 = new javax.swing.JLabel();
         lblfoto = new javax.swing.JLabel();
+        rSButtonIconI1 = new rojerusan.RSButtonIconI();
         panel_cards = new rojerusan.RSPanelsSlider();
         panel_home = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -169,10 +170,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("NOMBRE Y APELLIDO");
 
+        rSButtonIconI1.setBackground(new java.awt.Color(147, 100, 68));
+        rSButtonIconI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/icono_info1.png"))); // NOI18N
+        rSButtonIconI1.setText("SALIR");
+        rSButtonIconI1.setBorderPainted(false);
+        rSButtonIconI1.setColorHover(new java.awt.Color(134, 91, 68));
+        rSButtonIconI1.setFocusable(false);
+        rSButtonIconI1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIconI1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonIconI1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_menuLayout = new javax.swing.GroupLayout(panel_menu);
         panel_menu.setLayout(panel_menuLayout);
         panel_menuLayout.setHorizontalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_menuLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,11 +199,8 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btn_usuarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_clientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_acerca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(panel_menuLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonIconI1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         panel_menuLayout.setVerticalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +219,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btn_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_acerca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButtonIconI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         menu_background.add(panel_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
@@ -429,6 +446,10 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_acercaActionPerformed
 
+    private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_rSButtonIconI1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -496,5 +517,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel panel_home;
     private javax.swing.JPanel panel_menu;
     private javax.swing.JPanel panel_usuarios;
+    private rojerusan.RSButtonIconI rSButtonIconI1;
     // End of variables declaration//GEN-END:variables
 }
