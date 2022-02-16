@@ -447,6 +447,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_acercaActionPerformed
 
     private void rSButtonIconI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonIconI1ActionPerformed
+        efecto.Cerrar(this, WIDTH);
         System.exit(0);
     }//GEN-LAST:event_rSButtonIconI1ActionPerformed
 

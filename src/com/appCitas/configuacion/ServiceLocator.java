@@ -1,7 +1,6 @@
 package com.appCitas.configuacion;
 import java.sql.Connection;
 import java.sql.*;
-import java.sql.SQLException;
 
 
 // Cambio de prueba para GABO

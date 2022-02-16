@@ -6,16 +6,9 @@
 package com.appCitas.vistas;
 
 import Desvanecido.Efecto;
-import com.appCitas.controladores.controladoresMenu;
 import com.sun.awt.AWTUtilities;
-import java.awt.Color;
 import java.awt.Shape;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import com.appCitas.controladores.controladoresMenu;
 import javax.swing.JDialog;
 
 /**

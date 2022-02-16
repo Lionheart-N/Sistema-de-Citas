@@ -7,19 +7,8 @@ package com.appCitas.vistas;
 
 import com.appCitas.controladores.controladoresUsuario;
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import Desvanecimiento.Desvanecimiento;
 import com.appCitas.controladores.controladoresMenu;
-import java.applet.Applet;
-import java.applet.AudioClip;
-
 /**
  *
  * @author Gabriel Dubuc

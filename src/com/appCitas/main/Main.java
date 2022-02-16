@@ -5,8 +5,6 @@
  */
 package com.appCitas.main;
 import com.appCitas.controladores.controladoresUsuario;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  *
