@@ -246,7 +246,7 @@
                   <Color blue="44" green="64" red="93" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/appCitas/recursos/icono_info1.png"/>
+                  <Image iconType="3" name="/com/appCitas/recursos/Menu_cerrar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="SALIR"/>
                 <Property name="borderPainted" type="boolean" value="false"/>

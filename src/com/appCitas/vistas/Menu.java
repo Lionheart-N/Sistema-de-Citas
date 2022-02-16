@@ -171,7 +171,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText("NOMBRE Y APELLIDO");
 
         rSButtonIconI1.setBackground(new java.awt.Color(147, 100, 68));
-        rSButtonIconI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/icono_info1.png"))); // NOI18N
+        rSButtonIconI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/appCitas/recursos/Menu_cerrar.png"))); // NOI18N
         rSButtonIconI1.setText("SALIR");
         rSButtonIconI1.setBorderPainted(false);
         rSButtonIconI1.setColorHover(new java.awt.Color(134, 91, 68));
